@@ -1,3 +1,4 @@
+#beecrowd 1021
 # Leia um valor de ponto flutuante com duas casas decimais.
 # Este valor representa um valor monetário. A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto.
 # As notas consideradas são de 100, 50, 20, 10, 5, 2. As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01.
@@ -10,31 +11,31 @@
 # Imprima a quantidade mínima de notas e moedas necessárias para trocar o valor inicial, conforme exemplo fornecido.
 
 # Obs: Utilize ponto (.) para separar a parte decimal.
-quant = float(input("Digite um numero: ")+.001)
-quant = str(quant).replace(".","\n").split()
-numb= float(quant[0])
-numb_m = float(quant[1])/100
+# quant = float(input("Digite um numero: ")+.001)
+# quant = str(quant).replace(".","\n").split()
+# numb= float(quant[0])
+# numb_m = float(quant[1])/100
 
-real =0
-print("NOTAS:")
-valor = [10000,5000, 2000,1000,500,200]
-for i in range(len(valor)):
-    result = numb //valor[i]
-    print(f"{int(result)} nota(s) de R$ {valor[i]}.00",end="\n")
-    numb -= (result*valor[i])
-    if 1 == numb//1:
-        real =1.0
+# real =0
+# print("NOTAS:")
+# valor = [100,50, 20,10,5,2]
+# for i in range(len(valor)):
+#     result = numb //valor[i]
+#     print(f"{int(result)} nota(s) de R$ {valor[i]}.00",end="\n")
+#     numb -= (result*valor[i])
+#     if 1 == numb//1:
+#         real =1.0
 
-numb_m+=real
+# numb_m+=real
 
-print("MOEDAS:")
-valorm = [100, 50, 25, 10, 5,1]
-for i in range(len(valorm)):
-    result = numb_m //valorm[i]
-    print(f"{int(result)} moeda(s) de R$ {valorm[i]:.2f}",end="\n")
-    numb_m -= (result*valorm[i])
+# print("MOEDAS:")
+# valorm = [1.00, 0.50, 0.25, 0.10, 0.05, 0.01]
+# for i in range(len(valorm)):
+#     result = numb_m //valorm[i]
+#     print(f"{int(result)} moeda(s) de R$ {valorm[i]:.2f}",end="\n")
+#     numb_m -= (result*valorm[i])
 
-
+            #SEGUNDA TENTATIVA
 # quant = float(input("Digite um numero: "))
 # total_centavos = int(quant * 100 + 0.001)
 # print("NOTAS:")
@@ -62,3 +63,29 @@ for i in range(len(valorm)):
 # print(f"{int(total_centavos//0.05)} moeda(s) de R$ 0.05",end="\n")
 # total_centavos %= .05
 # print(f"{int(total_centavos//0.01)} moeda(s) de R$ 0.01",end="\n")
+
+
+        #SOLUÇÃO ENCONTRADA NA INTERNET 
+
+# # Read the floating-point value from the input
+# valor = float(input())
+
+# # Convert the value entirely to cents as an integer to prevent precision issues
+# # Adding a tiny fraction (0.001) ensures round-off safety before converting to int
+# total_centavos = int(valor * 100 + 0.001)
+
+# # Lists of notes and coins converted to cents
+# notas = [10000, 5000, 2000, 1000, 500, 200]
+# moedas = [100, 50, 25, 10, 5, 1]
+
+# print("NOTAS:")
+# for nota in notas:
+#     qtd_notas = total_centavos // nota
+#     total_centavos %= nota
+#     print(f"{qtd_notas} nota(s) de R$ {nota / 100:.2f}")
+
+# print("MOEDAS:")
+# for moeda in moedas:
+#     qtd_moedas = total_centavos // moeda
+#     total_centavos %= moeda
+#     print(f"{qtd_moedas} moeda(s) de R$ {moeda / 100:.2f}")

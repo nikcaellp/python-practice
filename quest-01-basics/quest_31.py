@@ -9,7 +9,7 @@
 #Imprima o valor lido e, em seguida, a quantidade mínima de notas de cada tipo necessárias, conforme o exemplo fornecido. 
 #Não esqueça de imprimir o fim de linha após cada linha,
 #caso contrário seu programa apresentará a mensagem: “Presentation Error”.
-    #Primeira solução
+    #Primeira solução feita por mim msm
 numb = int(input("Digite um numero: "))
 print(numb)
 valor = [100,50, 20,10,5,2,1]
@@ -19,6 +19,8 @@ for i in range(len(valor)):
     numb = numb - (result*valor[i])
 
         #Solução da Internet
+# numb = int(input())
+# print(numb)
 # print(f"{numb//100} nota(s) de R$ 100,00")
 # numb %= 100
 # print(f"{numb//50} nota(s) de R$ 50,00")

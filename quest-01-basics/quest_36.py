@@ -1,3 +1,4 @@
+#beecrowd 1036
 # Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. Se não for possível calcular as raízes,
 # mostre a mensagem correspondente “Impossivel calcular”, caso haja uma divisão por 0 ou raiz de numero negativo.
 
@@ -10,14 +11,13 @@
 # Imprima sempre o final de linha após cada mensagem.
 a,b,c= map(float,input().split())
 if a ==0:
-    print("Impossivel de calcular")
+    print("Impossivel calcular")
 else:
     delta = (b**2)-(4*a*c)
-    print(delta)
     if delta >=0:
         x1 = ((-b) + (delta **(1/2)))/(2*a)
         x2 = ((-b) - (delta **(1/2)))/(2*a)
         print(f"R1 = {x1:.5f}")
-        print(f"R1 = {x2:.5f}")
+        print(f"R2 = {x2:.5f}")
     else:
-        print("Impossivel de calcular")
+        print("Impossivel calcular")
