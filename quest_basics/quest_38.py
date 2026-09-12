@@ -3,14 +3,14 @@ sala = float(input("Qual o salário: "))
 anos = int(input("quantos anos pra pagar: "))
 anos*=12
 percento = (sala*30)/100
-prest = valor/anos
+prestacao = valor/anos
 
-print(f"valor da prestação :{prest:0.2f},\n30% do salario: {percento}")
-if prest >percento:
+print(f"Para pagar uma casa de :R${valor} em {int(anos/12)} anos\nO valor da prestação :{prestacao:0.2f},\n30% do salario: {percento}", end="")
+if prestacao >percento:
     print("Emprestimo \033[1;31m Negado\033[m")
-    print(f"30% ={percento}\nprestacao é {prest}")
+    print(f"30% ={percento}\nPrestacao é {prestacao}")
     
-elif prest == percento:
+elif prestacao == percento:
     print("Emprestimo aprovado por pouco")
 
 else:
